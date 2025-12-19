@@ -1427,8 +1427,8 @@ function parseComposeFile(composeFile) {
  * The JavaScript key code to use for the Compose key.
  * @type {?string}
  */
-var composeKey = 'AltRight';
-chrome.storage.local.get({key: 'AltRight'},
+var composeKey = 'AltLeft';
+chrome.storage.local.get({key: 'AltLeft'},
                          (val) => { composeKey = val.key; });
 /**
  * If true (the default) and composeKey is set to a modifier, retain the
@@ -1474,8 +1474,8 @@ var onComposeKeyLoaded = null;
 
 if (!composeKey) {
   chrome.storage.sync.get({
-    key: 'AltRight',
-    // Default to keeping the modifier: otherwise, the default AltRight compose
+    key: 'AltLeft',
+    // Default to keeping the modifier: otherwise, the default AltLeft compose
     // key conflicts with AltGr in international layouts.
     keepModifier: true,
   }, (stored) => {
